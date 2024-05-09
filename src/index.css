@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Raleway, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -23,6 +31,12 @@
   --white2: #f7f7fa;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: var(--blue);
@@ -30,12 +44,6 @@ a {
 }
 a:hover {
   color: var(--lightblue);
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 h1 {
@@ -60,4 +68,68 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* class given to all of the content, used to set margins so everything does not look fat */
+.section-content { 
+  margin-inline:2.5rem;
+}
+@media (min-width:1150px) {
+  .section-content {
+      max-width:1120px;
+      margin-inline: auto;
+  }
+}
+
+.generalbuttonlink {
+	transition: 0.4s;
+	-webkit-transition: 0.4s;
+	display: block;
+	text-transform: uppercase;
+	border: 2px solid #345396;
+	border-radius: 2px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 0;
+}
+
+.button-28 {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+	font-weight: bold;
+	text-align: center;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+.button-28:disabled {
+  pointer-events: none;
+}
+
+.button-28:hover {
+  color: #000000;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+
+.button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
 }

@@ -1,0 +1,130 @@
+.logo-s-div {
+    padding-inline: 8px;
+    padding-block:8px;
+    display:flex;
+    gap: 3px;
+}
+
+.logo-s-div > img {
+    height:28px;
+}
+
+.logo-s-title {
+    height:40px;
+}
+
+.london-s-bold {
+    font-weight:800;
+    font-size:1.3em;
+    line-height: .9;
+}
+
+.ls-s-regular {
+    font-weight: 500;
+    white-space:nowrap;
+    margin-top: -4px;
+    margin-left:1px;
+    font-size:.7em;
+}
+
+/* logo big */
+
+.logo-b-div {
+    padding-inline: 8px;
+    padding-block:8px;
+    display:flex;
+    gap: 3px;
+}
+
+.logo-b-div > img {
+    height:150px;
+}
+
+.logo-b-title {
+    height:150px;
+    color:white;
+}
+
+.london-b-bold {
+    font-weight:800;
+    font-size:7em;
+    line-height: .9;
+}
+
+.ls-b-regular {
+    font-weight: 500;
+    white-space:nowrap;
+    margin-top:-25px;
+    margin-left:4px;
+    font-size:3.5em;
+}
+
+@media (max-width:800px) {
+    .logo-b-div > img {
+        height:120px;
+    }
+    .logo-b-title {
+        height:120px;
+        color:white;
+    }
+    
+    .london-b-bold {
+        font-weight:800;
+        font-size:5em;
+    }
+    
+    .ls-b-regular {
+        font-weight: 500;
+        white-space:nowrap;
+        margin-top: -15px;
+        margin-left:2px;
+        font-size:2.5em;
+    }
+}
+
+@media (max-width:650px) {
+    .logo-b-div > img {
+        height:80px;
+    }
+    .logo-b-title {
+        height:80px;
+        color:white;
+    }
+    
+    .london-b-bold {
+        font-weight:800;
+        font-size:3.5em;
+    }
+    
+    .ls-b-regular {
+        font-weight: 500;
+        white-space:nowrap;
+        margin-top: -10px;
+        margin-left:2px;
+        font-size:1.7em;
+    }
+}
+
+@media (max-width:450px) {
+    .logo-b-div > img {
+        height:50px;
+    }
+    .logo-b-title {
+        height:50px;
+        color:white;
+    }
+    
+    .london-b-bold {
+        font-weight:800;
+        font-size:2.2em;
+    }
+    
+    .ls-b-regular {
+        font-weight: 500;
+        white-space:nowrap;
+        margin-top: -5px;
+        margin-left:2px;
+        font-size:1.1em;
+    }
+}
+

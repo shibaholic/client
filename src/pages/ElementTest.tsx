@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import reactLogo from '../assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import "./ElementTest.css"
 
 const ElementTest:React.FunctionComponent = () => {
   const [count, setCount] = useState(0)
@@ -19,8 +20,7 @@ const ElementTest:React.FunctionComponent = () => {
 
       <button>Button</button>
 
-      <img src={viteLogo} className="logo" alt="Vite logo" />
-      <img src={reactLogo} className="logo react" alt="React logo" />
+      <img src={reactLogo} className="logo2 react" alt="React logo" />
 
       {/* <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>

@@ -1,0 +1,48 @@
+.homepage-section1-bg {
+  position:absolute;
+  top:0;
+  z-index: -3;
+
+  width:100%;
+  height:100vh;
+
+  background-size:cover;
+  background-position:center;
+}
+
+.homepage-section1 {
+    height:100vh;
+    display:grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.slogan {
+  text-transform: uppercase;
+  color:white;
+  font-size: clamp(30px, 6vw, 70px);
+  line-height: 1.2;
+  font-weight:normal;
+  text-align:center;
+  max-width: 700px;
+}
+
+.homepage-apply {
+  width: clamp(150px, 20%, 50%);;
+}
+
+.homepage-logo {
+  padding-top:50px;
+}
+
+/* shrink the homepage-logo */
+@media (max-width:800px) {
+  .homepage-logo > .logo-b-div >  {
+      
+  }
+}
+
+
+.homepage-section3 {
+  height:300vh;
+}

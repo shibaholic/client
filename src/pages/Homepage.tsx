@@ -1,28 +1,69 @@
 import { useEffect, useState } from 'react'
 import reactLogo from '../assets/react.svg'
-import viteLogo from '/vite.svg'
-import './Homepage.module.css'
+import './Homepage.css'
+import { api_url } from '../scripts/api';
+import { Link } from 'react-router-dom';
+import { LogoBig } from '../components/Logo';
 
 const Homepage:React.FunctionComponent = () => {
-  const [count, setCount] = useState(0)
 
+  const [slogan, setSlogan] = useState("error");
+
+  const [bgImg, setBgImg] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function callAPI() {
+      try {
+        const res = await fetch(`${api_url}/api/homepage?populate[0]=first_background_image`);
+        const json = await res.json();
+
+        const slogan2 = json.data.attributes.slogan;
+        setSlogan(slogan2);
+
+        const imageUrl = json.data.attributes.first_background_image.data.attributes.url;
+
+        setBgImg(`${api_url}${imageUrl}`);
+      } catch(error) {
+        console.log(error)
+      }
+    }
+
+    callAPI();
+
+  }, [])
+  
   return (
-    <>
+    <div className="homepage">
+      <div 
+        className="homepage-section1-bg" 
+        style={{backgroundImage:`linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .3)), url(${bgImg})`}}>
+      </div>
 
-      <h1>This is h1</h1>
-      <h2>This is h2</h2>
-      <h3>This is h3</h3>
-      <h4>This is h4</h4>
+      <div className="section-content homepage-section1">
+        <LogoBig className="homepage-logo"/>
 
-      <p>This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. </p>
+        <h1 className="slogan">
+          {slogan}
+        </h1>
+        <Link to="/apply" className="button-28 homepage-apply">
+          Apply Now
+        </Link>
+      </div>
 
-      <a>This is a link.</a>
+      <div className="section-content homepage-section2"> 
+      { /* small description of the school */ }
+        <p>
+          The London Language School specializes in international Language education. With more than 35 years of experience teaching Languages, LLS has gained a reputation for providing high quality education in a friendly and supportive environment at an affordable price. Students may begin their language program on any Monday. Join our international family today! 
+        </p>
+        { /* some image */ }
+      </div>
 
-      <button>Button</button>
+      <div className="section-content homepage-section3">
+      { /* image grid to the same pages */ }
+        <p>image grid to the same pages </p>
+      </div>
 
-      <img src={viteLogo} className="logo" alt="Vite logo" />
-      <img src={reactLogo} className="logo react" alt="React logo" />
-    </>
+    </div>
   )
 }
 
