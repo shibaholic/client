@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 import { EnvelopeFill, TelephoneFill, List, XLg } from "react-bootstrap-icons";
 
@@ -7,7 +7,7 @@ import { LogoSmall }  from "./Logo"
 import { useEffect, useState } from "react";
 
 const Header:React.FunctionComponent = () => {
-    
+    const location = useLocation();
     const [scrolledDown, setScrolledDown] = useState(false);
 
     useEffect(() => {
@@ -23,7 +23,11 @@ const Header:React.FunctionComponent = () => {
             }
         }
     
-        window.addEventListener('scroll', handleScroll);
+        if(location.pathname != "/") {
+            setScrolledDown(true);
+        } else {
+            window.addEventListener('scroll', handleScroll);
+        }
     
         return () => {
             window.removeEventListener('scroll', handleScroll);

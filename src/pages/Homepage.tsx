@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import reactLogo from '../assets/react.svg'
 import './Homepage.css'
 import { api_url } from '../scripts/api';
 import { Link } from 'react-router-dom';
 import { LogoBig } from '../components/Logo';
+import { ImageGrid } from '../components/ImageGrid';
 
 const Homepage:React.FunctionComponent = () => {
 
+  const [data, setData] = useState<any>({});
   const [slogan, setSlogan] = useState("error");
 
   const [bgImg, setBgImg] = useState<string | null>(null);
@@ -20,6 +21,8 @@ const Homepage:React.FunctionComponent = () => {
         const slogan2 = json.data.attributes.slogan;
         setSlogan(slogan2);
 
+        setData(json.data);
+
         const imageUrl = json.data.attributes.first_background_image.data.attributes.url;
 
         setBgImg(`${api_url}${imageUrl}`);
@@ -29,8 +32,7 @@ const Homepage:React.FunctionComponent = () => {
     }
 
     callAPI();
-
-  }, [])
+  }, [location])
   
   return (
     <div className="homepage">
@@ -52,15 +54,16 @@ const Homepage:React.FunctionComponent = () => {
 
       <div className="section-content homepage-section2"> 
       { /* small description of the school */ }
+        <h2>Start your journey today</h2>
         <p>
-          The London Language School specializes in international Language education. With more than 35 years of experience teaching Languages, LLS has gained a reputation for providing high quality education in a friendly and supportive environment at an affordable price. Students may begin their language program on any Monday. Join our international family today! 
+          The London Language School specializes in international Language education. With more than 35 years of experience teaching Languages, LLS has gained a reputation for providing high quality education in a friendly and supportive environment at an affordable price. Students may begin their language program on any Monday. Join our international family today!  
         </p>
         { /* some image */ }
       </div>
 
-      <div className="section-content homepage-section3">
+      <div className="homepage-section3">
       { /* image grid to the same pages */ }
-        <p>image grid to the same pages </p>
+        <ImageGrid data2={data} />
       </div>
 
     </div>

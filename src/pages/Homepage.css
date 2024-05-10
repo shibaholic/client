@@ -42,7 +42,13 @@
   }
 }
 
+.homepage-section2 {
+  height:fit-content;
+}
 
 .homepage-section3 {
+  color:white;
+  margin-top:50px;
   height:300vh;
 }
+

@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import "./Logo.css"
 
 { /* used in header */ }
@@ -9,13 +10,16 @@ export const LogoSmall = ({className}:LogoSmallProps) => {
 
     return (
         <div className={`${className}`}>
+            <Link style={{display:"block"}}to="/">
             <div className="logo-s-div">
                 <img src="src\assets\icon-128.png" alt="logo"></img>
                 <div className="logo-s-title">
                     <p className="london-s-bold">LONDON</p> 
                     <p className="ls-s-regular">LANGUAGE SCHOOL</p>
                 </div>
+                
             </div>
+            </Link>
         </div>
     )
 }
